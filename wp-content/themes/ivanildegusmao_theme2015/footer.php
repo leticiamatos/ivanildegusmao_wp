@@ -24,6 +24,7 @@
 
 		<?php wp_footer(); ?>
 
+		
 		<!-- analytics -->
 		<script>
 		(function(f,i,r,e,s,h,l){i['GoogleAnalyticsObject']=s;f[s]=f[s]||function(){
@@ -32,6 +33,11 @@
 		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-XXXXXXXX-XX', 'yourdomain.com');
 		ga('send', 'pageview');
+		</script>
+		
+		<!-- Google+ -->
+		<script src="https://apis.google.com/js/platform.js" async defer>
+		  {lang: 'pt-BR'}
 		</script>
 
 	</body>
