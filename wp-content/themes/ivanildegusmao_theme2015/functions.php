@@ -479,14 +479,33 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
 // Pages IDs
     // Gallery
     $pg_gall = 25;
+
     // About
     $pg_abou = 6;
+    // Photo
+    $pg_apho = 47;
+    // Publications
+    $pg_apub = 52;
+    // Participations
+    $pg_apar = 54;
+
     // Texts
     $pg_text = 8;
     // News
     $pg_news = 11;
     // Contact
     $pg_cont = 13;
+
+    // Get Post Content and Title
+    function postTitle($postId){
+        $post = get_post( $postId ); 
+        echo $post->post_title;
+    }
+    function postContent($postId){
+        $post = get_post( $postId ); 
+        echo $post->post_content;
+    }
+
 
 function createGallery($post_id){
   $post = get_post( $post_id ); 

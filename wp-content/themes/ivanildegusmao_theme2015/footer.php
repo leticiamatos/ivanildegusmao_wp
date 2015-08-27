@@ -1,11 +1,21 @@
 			<section class="block_wpr footer">
 				<footer class="block_cntt">
-
-					<!-- copyright -->
+					<div class="separator">
+						<span class="ico"></span>
+					</div>
+					<nav class="menu_cntt">
+						<?php wp_nav_menu( ); ?> 
+					</nav>
+					<div class="separator"></div>
 					<p class="copyright">
-						&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>
+						Copyright &copy; <?php bloginfo('name'); ?>
+						<?php echo date('Y'); ?> 
+						- Todos os direitos reservados
 					</p>
-					<!-- /copyright -->
+					<div class="by">
+						<span>by:</span>
+						<a href="#" target="_blank" title="Gustavo Lins"></a>
+					</div>
 				</footer>
 			</section>
 

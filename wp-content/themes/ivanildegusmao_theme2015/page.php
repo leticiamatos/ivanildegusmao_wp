@@ -1,45 +1,42 @@
+<?php
+/**
+ * Template Name: Page
+ */
+?>
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
+<section class="block_wpr block_02">
+	<section class="block_cntt">
+		
+		<!-- About text -->
+		<div class="about_wpr">
+			<h2 class="page_title"><?php the_title(); ?></h2>
 
-			<h1><?php the_title(); ?></h1>
+			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-		<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+				<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					
 
-			<!-- article -->
-			<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+					<?php the_content(); ?>
 
-				<?php the_content(); ?>
+					<div class="separator"></div>
+					<span class="clear"></span>
 
-				<?php comments_template( '', true ); // Remove if you don't want comments ?>
+				</article>
 
-				<br class="clear">
+			<?php endwhile; ?>
 
-				<?php edit_post_link(); ?>
+			<?php else: ?>
+				<article>
+					<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
+					
+				</article>
+			<?php endif; ?>
+		</div>
 
-			</article>
-			<!-- /article -->
+	</section>
+</section>
 
-		<?php endwhile; ?>
-
-		<?php else: ?>
-
-			<!-- article -->
-			<article>
-
-				<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-
-			</article>
-			<!-- /article -->
-
-		<?php endif; ?>
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+<?php //get_sidebar(); ?>
 
 <?php get_footer(); ?>
