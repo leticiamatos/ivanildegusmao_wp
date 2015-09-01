@@ -64,8 +64,9 @@
 				</div>
 
 			</div>
-			<div class="comments">
-				<div class="fb-comments" data-href="<?php the_permalink(); ?>" data-numposts="5"  data-width="960"></div>
+			<div class="comments_cntt">
+				<!--div class="fb-comments" data-href="<?php //the_permalink(); ?>" data-numposts="5"  data-width="960"></div-->
+				<?php comments_template(); ?>
 			</div>
 
 		</div>

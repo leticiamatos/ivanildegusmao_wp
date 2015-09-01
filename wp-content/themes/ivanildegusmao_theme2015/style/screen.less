@@ -609,8 +609,125 @@ body.single{
         vertical-align: middle;
       }
     }
-    .comments{
+    .comments_cntt{
       padding-top: 35px;
+
+      .comment-respond{
+        position: relative;
+        height: 260px;
+      }
+      .comment-reply-title,
+      .logged-in-as,
+      .comment-notes,
+      .comment-form-url,
+      .form-allowed-tags{
+        display: none;
+      }
+      .comment-form-author,
+      .comment-form-comment,
+      .comment-form-email{
+        display: block;
+
+        input{
+          display: block;
+          margin-top: 10px;
+        }
+      }
+      .comment-form-author,
+      .comment-form-email{
+        position: absolute;
+        left: 0;
+        width: 49%;
+      }
+      .comment-form-author{
+        top: 5px;
+      }
+      .comment-form-email{
+        top: 95px;
+      }
+      .comment-form-comment{
+        width: 49%;
+        position: absolute;
+        right: 0;
+        top: 5px;
+        textarea{
+          margin-top: 10px;
+          height: 106px;
+        }
+      }
+      .form-submit{
+        position: absolute;
+        top: 190px;
+        right: 0;
+      }
+      .children{
+        border-left: 4px solid @cO;
+        padding-left: 20px;
+        margin-left: 30px;
+        margin-top: 20px;
+      }
+    }
+    .comments_list{
+      .comment_list_title{
+        padding-top: 30px;
+        font-size: 18px;
+        color: @cG;
+        font-family: @fontBl;
+        font-style: italic;
+      }
+      ul{
+        margin-top: 50px;
+      }
+      li.comment{
+        padding-top: 20px;
+      }
+      .comment-body{
+        position: relative;
+        p{
+          font-size: 14px;
+          color: @cG;
+          line-height: 20px;
+        }
+      }
+      .fn{
+        font-family: @fontBl;
+        font-size: 15px;
+        color: @cK;
+        position: relative;
+        top: -3px;
+        margin-bottom: 5px;
+      }
+      .says{
+        display: none;
+      }
+      .avatar{
+        width: 50px;
+        height: auto;
+        float: left;
+        margin: 0 20px 0 0;
+      }
+      .comment-meta{
+        position: absolute;
+        right: 0;
+        top: 0;
+        font-size: 12px;
+        color: @cG;
+        font-style: italic;
+        a{
+          color: @cG;
+        }
+      }
+      .reply{
+        clear: both;
+        height: 30px;
+        text-align: right;
+        .comment-reply-link{
+          background: @cO;
+          color: @cW;
+          padding: 5px;
+          font-size: 12px;
+        }
+      }
     }
   }
 }
@@ -657,6 +774,9 @@ form{
   .form_div{
     padding: 5px 0 19px;
   }
+  p #author,
+  p #email,
+  p #comment,
   .txt{
     border: none;
     width: 96%;
@@ -666,6 +786,7 @@ form{
     font-size: 14px;
     font-family: @fontRe;
   }
+  .form-submit input,
   .btn{
     cursor: pointer;
     border:none;
