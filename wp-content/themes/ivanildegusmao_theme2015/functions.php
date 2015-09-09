@@ -508,24 +508,29 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
         echo $post->post_content;
     }
 
+    // Create Carousel/Galery
+    function createGallery($post_id){
+      $post = get_post( $post_id ); 
+      $gallery = get_post_gallery_images( $post ); 
 
-function createGallery($post_id){
-  $post = get_post( $post_id ); 
-  $gallery = get_post_gallery_images( $post ); 
+      $image_list = '<ul class="bxslider">';
 
-  $image_list = '<ul class="bxslider">';
+      // Loop through each image in each gallery
+      foreach( $gallery as $image_url ) {
 
-  // Loop through each image in each gallery
-  foreach( $gallery as $image_url ) {
+        $image_list .= '<li>' . '<img src="' . $image_url . '">' . '</li>';
 
-    $image_list .= '<li>' . '<img src="' . $image_url . '">' . '</li>';
+      }
 
-  }
+      $image_list .= '</ul>';
+      echo $image_list;
+    }
 
-  $image_list .= '</ul>';
-  echo $image_list;
-}
-
+    // Less Words in the_excertp
+    function custom_excerpt_length( $length ) {
+        return 20;
+    }
+    add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
 
 ?>

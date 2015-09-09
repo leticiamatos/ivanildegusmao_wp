@@ -19,6 +19,32 @@
 					<div class="text">
 						<?php the_content(); ?>
 
+<!-- 						
+<div class="col_1">
+<label for="txt_nome">Nome</label>
+<div class="form_div form_name">
+[text* nome id:txt_nome class:txt]									
+</div>
+<label for="txt_email">E-mail</label>
+<div class="form_div form_email">
+[email* email id:txt_email class:txt]									
+</div>
+<label for="txt_subj">Assunto</label>
+<div class="form_div form_subj">
+[text subject id:txt_subj class:txt]									
+	<input type="texto" class="txt" id="txt_subj" />
+</div>
+</div>
+<div class="col_2">
+<label for="txt_messa">Mensagem</label>
+<div class="form_div form_messa">
+[textarea* message id:txt_messa class:txt]
+</div>
+</div>
+<div class="buttons">
+[submit id:btn_submit class:btn "Enviar Mensagem"]
+</div>
+ -->
 						<!--form>
 							<div class="col_1">
 								<label for="txt_nome">Nome</label>
