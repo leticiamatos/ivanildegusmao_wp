@@ -309,6 +309,12 @@ body.home{
     .postorder_6{
       margin-left: 2%;
     }
+    .postorder_7,
+    .postorder_8,
+    .postorder_11,
+    .postorder_9{
+      clear: both;
+    }
   }
 }
 
@@ -845,4 +851,50 @@ footer{
       top: 13px;
     }
   }
+}
+
+
+// Pagination
+.pagination{
+    padding: 50px 0;
+    text-align: center;
+    
+    .page-numbers{
+      display: inline-block;
+      height: 45px;
+      width: 45px;
+      background: #999;
+      text-align: center;
+      line-height: 45px;
+      font-size: 26px;
+      margin: 0 2px;
+      color: @cG2;
+    }
+    .dots{
+      color: #797164;
+      background: none;
+      width: 30px;
+      margin:0;
+    }
+    .current{
+      background: @cO;
+    }
+    .next{
+      background: #999 url(../img/icons/pag_arrow_right.png) center no-repeat;
+      color: transparent;
+      position: relative;
+      left: 0;
+    }
+    .next:hover{
+      left: 3px;
+    }
+    .prev{
+      background: #999 url(../img/icons/pag_arrow_left.png) center no-repeat;
+      color: transparent;
+      position: relative;
+      right: 0;
+    }
+    .prev:hover{
+      right: 3px;
+    }
 }

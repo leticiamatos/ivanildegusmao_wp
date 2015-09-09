@@ -19,7 +19,7 @@
 					<div class="text">
 						<?php the_content(); ?>
 
-						<form>
+						<!--form>
 							<div class="col_1">
 								<label for="txt_nome">Nome</label>
 								<div class="form_div form_name">
@@ -43,7 +43,7 @@
 							<div class="buttons">
 								<input type="submit" class="btn" value="Enviar Mensagem" />
 							</div>
-						</form>
+						</form-->
 					</div>
 
 				</article>

@@ -485,9 +485,11 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     // Photo
     $pg_apho = 47;
     // Publications
-    $pg_apub = 52;
+    //local $pg_apub = 52;
+    $pg_apub = 57;
     // Participations
-    $pg_apar = 54;
+    //local $pg_apar = 54;
+    $pg_apar = 58;
 
     // Texts
     $pg_text = 8;
