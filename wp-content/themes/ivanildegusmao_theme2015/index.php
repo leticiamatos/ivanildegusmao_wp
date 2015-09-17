@@ -3,45 +3,44 @@
 <!-- Gallery -->
 <section class="block_wpr block_01">
 	<section class="block_cntt">
-		<?php
-			//createBannerGallery($args_gallery);
 
-			//$attachments = get_posts($args);
-			 $attachments = get_attached_media( 'image', 108 );
-	        echo '<h2>108</h2>';
+<?php 
 
-	        // Loop through each image in each gallery
-	        if ( $attachments ){
-	            echo "Olar";
-	            $image_list = '<ul class="bxslider">';
-	            
-	            foreach ( $attachments as $attachment ):
-	                // Get attachment caption as URL
+	function get_gallery_attachments( $post_id ){
 
-					$attach_meta = wp_get_attachment_metadata( $attachment->ID);
-					$attach_image_meta =  $attach_meta->image_meta;
-					$attach_image_meta_cap = $attach_image_meta->caption;
-					$attach_image_meta_title = $attach_image_meta->title;
-					echo '<h3>' . $attach_image_meta_cap . '</h3>';
-					echo '<h3>' . $attach_image_meta_title . '</h3>';
+		$post = get_post( $post_id ); 
+		$post_content = $post->post_content;
+		preg_match('/\[gallery.*ids=.(.*).\]/', $post_content, $ids);
+		$images_id = explode(",", $ids[1]);
+		
+		return $images_id;
+	}
 
-	                // $attach_caption = $attachment->post_excerpt;
-	                // $attach_img = wp_get_attachment_image($attachment->ID, 'full');
+ 	$gallery_images_id = get_gallery_attachments($pg_gall);
 
-	                // if ( $attach_caption ):
-	                //     $image_list .= '<li><a href="' .$attach_caption . '">'.$attach_img.'</a></li>';
-	                // else :
-	                //     $image_list .= '<li>'.$attach_img.'</li>';
-	                // endif;
+	$image_list = '<ul class="bxslider">';
 
+	// Loop through each image in each gallery
+	foreach( $gallery_images_id as $img_id ) {
 
-	            endforeach;
+		$post_obj = get_post( $img_id );
+		$img_caption = $post_obj->post_excerpt;
 
-	            $image_list .= '</ul>';
-	            echo $image_list;
-	        }
+		$image_list .= '<li>';
+		if ($img_caption){
+			$image_list .= '<a href="' . $img_caption . '">';
+			$image_list .= 	wp_get_attachment_image( $img_id, 'full' );
+			$image_list .= '</a>';
+		}else{
+			$image_list .= 	wp_get_attachment_image( $img_id, 'full' );
+		}
+		$image_list .= '</li>';
 
-		?>
+	}
+
+	$image_list .= '</ul>';
+	echo $image_list;
+?>
 
 	</section>
 </section>
