@@ -279,7 +279,7 @@ body.home{
       width: 49%;
       float: left;
       article{
-        min-height: 220px;
+        min-height: 240px;
       }
       .text{
         padding-bottom: 35px;
@@ -297,10 +297,10 @@ body.home{
       width: 32%;
       float: left;
       article{
-        min-height: 220px;
+        min-height: 300px;
       }
       .text{
-        padding-bottom: 35px;
+        padding-bottom: 20px;
       }
     }
     .postorder_5,
@@ -425,6 +425,7 @@ body.home{
     background: @cW;
     margin-top: 10px;
     padding: 20px;
+    width: 910px;
     border: 5px solid @cG3;
     float: left;
     
@@ -462,6 +463,8 @@ body.home{
         font-family: @fontBl;
         display: inline-block;
         color: @cG;
+        clear: both;
+        width: 100%;
       }
 
     }
@@ -478,18 +481,16 @@ body.a-autora{
     padding-top: 50px;
     .photo{
       float: left;
-      margin: 30px 30px 30px 0;
+      margin: 30px 30px 10px 0;
     }
     .page_title{
       font-size: 30px;
       font-family: @fontBl;
     }
     article{
-      float: left;
-      font-size: 17px;
-      line-height: 35px;
+      font-size: 15px;
+      line-height: 32px;
       margin-top: 30px;
-      width: 490px;
     }
   }
   .publicat_wpr,
@@ -559,7 +560,14 @@ body.category{
 // Single
 body.single{
   
-
+  .return_to_home{
+    a{
+      color: @cO;
+      font-family: @fontBl;
+      background: url(../img/icons/return.png) left center no-repeat;
+      padding-left: 25px;
+    }
+  }
   .sinle_wpr{
     .date{
       color: @cG;
@@ -568,7 +576,7 @@ body.single{
     .category{
       right: 0;
       left: auto;
-      top: 50px;
+      top: 115px;
     }
   }
   .post_item{
@@ -766,7 +774,15 @@ body.contato{
       text-align: right;
       clear: both;
       padding-top: 20px;
+      position: relative;
     }
+  }
+
+  // Form 7 gif
+  div.wpcf7 img.ajax-loader{
+    position: absolute;
+    right: 170px;
+    top: 35px;
   }
 }
 

@@ -10,6 +10,10 @@
 		
 		<div class="sinle_wpr">
 			<div class="separator"></div>
+			<div class="return_to_home">
+				<a href="<?php echo home_url(); ?>">Voltar para a página inicial</a>
+			</div>
+			<div class="separator"></div>
 
 			<?php if (have_posts()): while (have_posts()) : the_post(); ?>
 

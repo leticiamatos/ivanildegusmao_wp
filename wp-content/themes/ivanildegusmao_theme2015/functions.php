@@ -526,6 +526,37 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
       echo $image_list;
     }
 
+        
+    // Create Home Carousel/Galery with Banner's URL
+    function createBannerGallery($args){
+        
+        $attachments = get_posts($args);
+
+        // Loop through each image in each gallery
+        if ( $attachments ){
+            
+            $image_list = '<ul class="bxslider">';
+            
+            foreach ( $attachments as $attachment ):
+                // Get attachment caption as URL
+                $attach_caption = $attachment->post_excerpt;
+                $attach_img = wp_get_attachment_image($attachment->ID, 'full');
+
+                if ( $attach_caption ):
+                    $image_list .= '<li><a href="' .$attach_caption . '">'.$attach_img.'</a></li>';
+                else :
+                    $image_list .= '<li>'.$attach_img.'</li>';
+                endif;
+
+
+            endforeach;
+
+            $image_list .= '</ul>';
+            echo $image_list;
+        }
+
+    }
+
     // Less Words in the_excertp
     function custom_excerpt_length( $length ) {
         return 20;
